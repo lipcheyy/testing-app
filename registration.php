@@ -10,20 +10,20 @@
 </head>
 <body>
 <div class="form-container">
-    <form action="#" method="post" class="auth-form" enctype="multipart/form-data">
+    <form action="includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
         <label for="">FULL NAME</label>
-        <input type="text" placeholder="Your full name" required>
+        <input type="text" name="fullName" placeholder="Your full name" required>
         <label for="">Login</label>
-        <input type="text" placeholder="Your account login" required>
+        <input type="text" name="login" placeholder="Your account login" required>
         <label for="">Email</label>
-        <input type="text" placeholder="Your email" required>
+        <input type="text" name="email" placeholder="Your email" required>
         <label for="">Password</label>
-        <input type="password" placeholder="Write your password" required >
+        <input type="password" name="pass" placeholder="Write your password" required >
         <label for="">Repeat password</label>
-        <input type="password" placeholder="repeat your password" required >
+        <input type="password" name="pass-rep" placeholder="repeat your password" required >
         <label for="">Choose your avatar(not requiered)</label>
-        <input type="file">
-        <input type="submit" value="sign up" class="sign-up sign-in">
+        <input type="file" name="avatar">
+        <input type="submit" name="sign-up" value="sign up" class="sign-up sign-in">
         <div>
            Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
         </div>

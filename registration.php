@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="form-container">
-    <form action="#" method="post" class="auth-form">
+    <form action="#" method="post" class="auth-form" enctype="multipart/form-data">
         <label for="">FULL NAME</label>
         <input type="text" placeholder="Your full name" required>
         <label for="">Login</label>
@@ -24,7 +24,9 @@
         <label for="">Choose your avatar(not requiered)</label>
         <input type="file">
         <input type="submit" value="sign up" class="sign-up sign-in">
-
+        <div>
+           Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
+        </div>
     </form>
 </div>
 </body>

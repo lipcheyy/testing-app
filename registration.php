@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,21 +15,31 @@
 <div class="form-container">
     <form action="includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
         <label for="">FULL NAME</label>
-        <input type="text" name="fullName" placeholder="Your full name" required>
+        <input type="text" name="fullName" placeholder="Your full name" autocomplete="off">
         <label for="">Login</label>
-        <input type="text" name="login" placeholder="Your account login" required>
+        <input type="text" name="login" placeholder="Your account login"  autocomplete="off">
         <label for="">Email</label>
-        <input type="text" name="email" placeholder="Your email" required>
+        <input type="text" name="email" placeholder="Your email"  autocomplete="off">
         <label for="">Password</label>
-        <input type="password" name="pass" placeholder="Write your password" required >
+        <input type="password" name="pass" placeholder="Write your password"   autocomplete="off">
         <label for="">Repeat password</label>
-        <input type="password" name="pass-rep" placeholder="repeat your password" required >
-        <label for="">Choose your avatar(not requiered)</label>
+        <input type="password" name="pass-rep" placeholder="repeat your password"  autocomplete="off">
+        <label for="">Choose your avatar(not required)</label>
         <input type="file" name="avatar">
         <input type="submit" name="sign-up" value="sign up" class="sign-up sign-in">
         <div>
            Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
         </div>
+            <?php
+                if(isset($_SESSION['msg']))
+                {
+                    echo "<div class=message>" . $_SESSION['msg'] . "</div>";
+                    unset($_SESSION['msg']);
+                }
+
+
+            ?>
+
     </form>
 </div>
 </body>

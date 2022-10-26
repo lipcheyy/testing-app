@@ -39,6 +39,7 @@ input{
     padding: 10px 15px;
     border-radius: 10px ;
     border: 0;
+
 }
 .sign-in{
     background-color: aquamarine;
@@ -46,4 +47,10 @@ input{
     font: inherit;
     cursor: pointer;
     outline: inherit;
+}
+.message{
+    border: 2px solid red;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
 }

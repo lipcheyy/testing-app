@@ -16,7 +16,10 @@
             <input type="text" placeholder="Write your login" required>
             <label for="">Password</label>
             <input type="password" placeholder="Write your password" required >
-            <input type="submit" value="sign in">
+            <input type="submit" value="sign in" class="sign-in">
+            <div>
+                Not have an accoutn? - <a href="registration.php" style="color: blue">Sign up</a>
+            </div>
         </form>
     </div>
 </body>

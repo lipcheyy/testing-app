@@ -12,6 +12,7 @@ body {
     font-family: Montserrat;
     color: white;
 }
+
 nav {
     background: #0e1321;
     padding: 0 15px;
@@ -22,15 +23,27 @@ a {
     font-family: Montserrat;
 }
 .form-container{
-    margin: 250px auto ;
+    margin: 100px auto ;
     width: 400px;
+    background-color: #0e1321;
+    padding: 30px;
+    border-radius: 10px ;
 }
 .auth-form{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 input{
     padding: 10px 15px;
+    border-radius: 10px ;
+    border: 0;
+}
+.sign-in{
+    background-color: aquamarine;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }

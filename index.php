@@ -1,5 +1,8 @@
 <?php
-session_start();?>
+session_start();
+if(!$_SESSION['user']){
+    header('Location: signinform.php');
+}?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@ session_start();?>
     <title>Homepage</title>
 </head>
 <body>
-
+<a href="includes/exit.php">EXIT</a>
 
 </body>
 </html>

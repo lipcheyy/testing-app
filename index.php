@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['user']){
-    header('Location: signinform.php');
+    header('Location: authorization/signinform.php');
 }?>
 <!doctype html>
 <html lang="en">

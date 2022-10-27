@@ -3,9 +3,10 @@
     require_once 'connect.php';
     $login=$_POST['login'];
     $pass=md5($_POST['pass']);
+    /** @var TYPE_NAME $connect */
     $check_usr=mysqli_query($connect,"SELECT * FROM `users` WHERE `login`='$login' AND `password`='$pass' ");
     if(mysqli_num_rows($check_usr)>0){
-        //PARSE CHECK USER INTO NORMAL ARRAY
+        //transform CHECK USER INTO NORMAL ARRAY
         $user=mysqli_fetch_assoc($check_usr);
         $_SESSION['user']=[
             'id' => $user['id'],

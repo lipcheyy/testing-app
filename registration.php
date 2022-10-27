@@ -28,7 +28,7 @@ session_start();
         <input type="file" id="ph" name="avatar">
         <input type="submit"  name="sign-up" value="sign up" class="sign-up sign-in">
         <div>
-           Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
+           Already have an account - <a href="signinform.php" style="color: blue">Sign in!</a>
         </div>
             <?php
                 if(isset($_SESSION['msg']))

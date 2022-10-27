@@ -21,7 +21,7 @@ if ($pass===$pass_rep){
     $pass=md5($pass);
     mysqli_query($connect,"INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name','$login', '$email', '$pass', '$path')");
     $_SESSION['msg']="SIGNED UP SUCESFULLY";
-    header('Location: ../index.php');
+    header('Location: ../signinform.php');
 }
 
 else{

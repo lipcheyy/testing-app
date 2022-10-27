@@ -8,7 +8,7 @@ session_start();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="css/auth.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,9 +24,9 @@ session_start();
         <input type="password" name="pass" placeholder="Write your password"   autocomplete="off">
         <label for="">Repeat password</label>
         <input type="password" name="pass-rep" placeholder="repeat your password"  autocomplete="off">
-        <label for="">Choose your avatar(not required)</label>
-        <input type="file" name="avatar">
-        <input type="submit" name="sign-up" value="sign up" class="sign-up sign-in">
+        <label for="ph">Choose your avatar</label>
+        <input type="file" id="ph" name="avatar">
+        <input type="submit"  name="sign-up" value="sign up" class="sign-up sign-in">
         <div>
            Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
         </div>

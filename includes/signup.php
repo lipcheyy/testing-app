@@ -8,11 +8,28 @@ $login=$_POST['login'];
 $email=$_POST['email'];
 $pass=$_POST['pass'];
 $pass_rep=$_POST['pass-rep'];
-if ($pass==$pass_rep){
-    echo "rigth";
+
+//uploads path
+
+
+if ($pass===$pass_rep){
+    $path= 'uploads/' . time() . $_FILES['avatar']['name'];
+    if (!move_uploaded_file($_FILES["avatar"]["tmp_name"], "../$path")){
+        $_SESSION['msg']="UPLOAD AVATAR IMAGE";
+        header('Location: ../registration.php');
+    }
+    mysqli_query($connect,"INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name','$login', '$email', '$pass', '$path')");
+    header('Location: ../index.php');
 }
+
 else{
     $_SESSION['msg']="PASSWORDS ARE NOT THE SAME";
     header('Location: ../registration.php');
 }
-echo $pass_rep;
+
+?>
+<pre>
+    <?php
+        print_r($_FILES);
+    ?>
+</pre>

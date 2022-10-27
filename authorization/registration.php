@@ -11,12 +11,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <title>Document</title>
 </head>
 <body>
 <div class="form-container">
-    <form action="includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
+    <form action="../includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
         <label for="">FULL NAME</label>
         <input type="text" name="fullName" placeholder="Your full name" autocomplete="off">
         <label for="">Login</label>

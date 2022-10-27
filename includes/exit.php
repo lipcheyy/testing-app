@@ -1,4 +1,4 @@
 <?php
 session_start();
 unset($_SESSION['user']);
-header('Location: ../signinform.php');
+header('Location: ../authorization/signinform.php');

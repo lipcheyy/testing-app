@@ -18,5 +18,5 @@
     }
     else{
         $_SESSION['msg']="WRONG LOGIN OR PASSWORD";
-        header('Location: ../signinform.php');
+        header('Location: ../authorization/signinform.php');
     }

@@ -18,6 +18,7 @@ if ($pass===$pass_rep){
         $_SESSION['msg']="UPLOAD AVATAR IMAGE";
         header('Location: ../registration.php');
     }
+    $pass=md5($pass);
     mysqli_query($connect,"INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name','$login', '$email', '$pass', '$path')");
     header('Location: ../index.php');
 }

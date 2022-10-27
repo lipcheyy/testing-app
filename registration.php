@@ -36,10 +36,7 @@ session_start();
                     echo "<div class=message>" . $_SESSION['msg'] . "</div>";
                     unset($_SESSION['msg']);
                 }
-
-
             ?>
-
     </form>
 </div>
 </body>

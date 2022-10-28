@@ -42,15 +42,15 @@ $('.sign-up').click(function (e) {
 
     $(`input`).removeClass('error');
 
-    let login = $('input[name="login"]').val(),
-        password = $('input[name="password"]').val(),
-        full_name = $('input[name="full_name"]').val(),
-        email = $('input[name="email"]').val(),
-        password_confirm = $('input[name="password_confirm"]').val();
+    let login = $('.login').val(),
+        password = $('.pass').val(),
+        full_name = $('.full_name').val(),
+        email = $('.email').val(),
+        password_confirm = $('.pass-rep').val();
 
     let formData = new FormData();
     formData.append('login', login);
-    formData.append('pass', password);
+    formData.append('password', password);
     formData.append('password_confirm', password_confirm);
     formData.append('full_name', full_name);
     formData.append('email', email);
@@ -66,22 +66,20 @@ $('.sign-up').click(function (e) {
         cache: false,
         data: formData,
         success (data) {
-
-            if (data.status) {
-                document.location.href = '/index.php';
+            if (data.status===true) {
+                document.location.href = "index.php";
             } else {
 
                 if (data.type === 1) {
-                    data.fields.forEach(function (field) {
-                        $(`input[name="${field}"]`).addClass('error');
+                    data.fields.forEach(function (errors) {
+                        $(`input[name="${errors}"]`).addClass('error');
                     });
                 }
 
-                $('.msg').removeClass('none').text(data.message);
+                $('.message').removeClass('hide').text(data.message);
 
             }
 
         }
     });
-
 });

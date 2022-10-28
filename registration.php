@@ -16,31 +16,27 @@
 </head>
 <body>
 <div class="form-container">
-    <form action="includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
+    <form class="auth-form">
         <label for="">FULL NAME</label>
-        <input type="text" name="fullName" placeholder="Your full name" autocomplete="off">
+        <input type="text" name="full_name" placeholder="Your full name" class="full_name" autocomplete="off">
         <label for="">Login</label>
-        <input type="text" name="login" placeholder="Your account login"  autocomplete="off">
+        <input type="text" name="login" placeholder="Your account login" class="login"  autocomplete="off">
         <label for="">Email</label>
-        <input type="text" name="email" placeholder="Your email"  autocomplete="off">
+        <input type="text" name="email" placeholder="Your email" class="email"  autocomplete="off">
         <label for="">Password</label>
-        <input type="password" name="pass" placeholder="Write your password"   autocomplete="off">
+        <input type="password" name="password" placeholder="Write your password" class="pass"  autocomplete="off">
         <label for="">Repeat password</label>
-        <input type="password" name="pass-rep" placeholder="repeat your password"  autocomplete="off">
+        <input type="password" name="password_confirm" placeholder="repeat your password" class="pass-rep" autocomplete="off">
         <label for="ph">Choose your avatar</label>
-        <input type="file" id="ph" name="avatar">
-        <input type="submit"  name="sign-up" value="sign up" class="sign-up sign-in">
+        <input type="file" id="ph" name="avatar" class="avatar">
+        <input type="submit"  name="sign-up" value="sign up" class="sign-up">
         <div>
            Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
         </div>
-            <?php
-                if(isset($_SESSION['msg']))
-                {
-                    echo "<div class=message>" . $_SESSION['msg'] . "</div>";
-                    unset($_SESSION['msg']);
-                }
-            ?>
+        <div class="message hide"></div>
     </form>
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

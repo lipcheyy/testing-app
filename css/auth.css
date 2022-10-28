@@ -48,6 +48,9 @@ input{
     cursor: pointer;
     outline: inherit;
 }
+.hide{
+    display: none;
+}
 .message{
     border: 2px solid red;
     text-align: center;

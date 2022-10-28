@@ -15,9 +15,9 @@
             'avatar' => $user['avatar'],
             'login' => $user['login']
         ];
-        header('Location: ../index.php');
+        header('Location: ../homepage.php');
     }
     else{
         $_SESSION['msg']="WRONG LOGIN OR PASSWORD";
-        header('Location: ../authorization/signinform.php');
+        header('Location: ../index.php');
     }

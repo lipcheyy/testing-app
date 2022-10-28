@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['user']){
-    header('Location: index.php');
+    header('Location: homepage.php');
 }
 ?>
 <!doctype html>
@@ -11,12 +11,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="css/auth.css">
     <title>Document</title>
 </head>
 <body>
 <div class="form-container">
-    <form action="../includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
+    <form action="includes/signup.php" method="post" class="auth-form" enctype="multipart/form-data">
         <label for="">FULL NAME</label>
         <input type="text" name="fullName" placeholder="Your full name" autocomplete="off">
         <label for="">Login</label>
@@ -31,7 +31,7 @@
         <input type="file" id="ph" name="avatar">
         <input type="submit"  name="sign-up" value="sign up" class="sign-up sign-in">
         <div>
-           Already have an account - <a href="signinform.php" style="color: blue">Sign in!</a>
+           Already have an account - <a href="index.php" style="color: blue">Sign in!</a>
         </div>
             <?php
                 if(isset($_SESSION['msg']))

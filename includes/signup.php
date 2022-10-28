@@ -13,18 +13,18 @@ if ($pass===$pass_rep){
     $path= 'uploads/' . time() . $_FILES['avatar']['name'];
     if (!move_uploaded_file($_FILES["avatar"]["tmp_name"], "../$path")){
         $_SESSION['msg']="UPLOAD AVATAR IMAGE";
-        header('Location: ../authorization/registration.php');
+        header('Location: ../registration.php');
     }
     $pass=md5($pass);
     /** @var TYPE_NAME $connect */
     mysqli_query($connect,"INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name','$login', '$email', '$pass', '$path')");
     $_SESSION['msg']="SIGNED UP SUCESFULLY";
-    header('Location: ../authorization/signinform.php');
+    header('Location: ../index.php');
 }
 
 else{
     $_SESSION['msg']="PASSWORDS ARE NOT THE SAME";
-    header('Location: ../authorization/registration.php');
+    header('Location: ../registration.php');
 }
 
 ?>

@@ -2,7 +2,26 @@
     session_start();
     require_once 'connect.php';
     $login=$_POST['login'];
-    $pass=md5($_POST['pass']);
+    $pass=$_POST['pass'];
+    //FIELDS CHECK
+    $errors=[];
+    if ($login===""){
+        $errors[]='login';
+    }
+    if ($pass===""){
+        $errors[]='pass';
+    }
+    if (!empty($errors)){
+        $response=[
+          "status"=>false,
+          "type"=>1,
+          "message"=>"CHECK IF FIELDS ARE NOT EMPTY",
+          "fields"=>$errors
+        ];
+        echo json_encode($response);
+        die();
+    }
+    $pass= md5($pass);
     /** @var TYPE_NAME $connect */
     $check_usr=mysqli_query($connect,"SELECT * FROM `users` WHERE `login`='$login' AND `password`='$pass' ");
     if(mysqli_num_rows($check_usr)>0){

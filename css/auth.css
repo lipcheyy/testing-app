@@ -39,7 +39,11 @@ input{
     padding: 10px 15px;
     border-radius: 10px ;
     border: 0;
-
+}
+.shdw{
+    -webkit-box-shadow: 3px -4px 99px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px -4px 99px -7px rgba(0,0,0,0.75);
+    box-shadow: 3px -4px 99px -7px rgba(0,0,0,0.75);
 }
 .sign-in{
     background-color: aquamarine;
@@ -50,6 +54,9 @@ input{
 }
 .hide{
     display: none;
+}
+.error{
+    border:1px solid red;
 }
 .message{
     border: 2px solid red;

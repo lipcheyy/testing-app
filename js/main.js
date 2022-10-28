@@ -1,8 +1,9 @@
 $('.sign-in').click(function (event){
     event.preventDefault();
+    $(`input`).removeClass('error');
     login=$('.login').val();
     password=$('.pass').val();
-    console.log(password);
+
     $.ajax({
         url:'includes/signin.php',
         type: 'POST',
@@ -16,6 +17,11 @@ $('.sign-in').click(function (event){
                 document.location.href="homepage.php"
             }
             else {
+                if (data.type===1){
+                    data.fields.forEach(function (errors){
+                        $(`input[name="${errors}"]`).addClass('error');
+                    });
+                }
                 $('.message').removeClass('hide').text(data.message);
             }
 

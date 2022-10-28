@@ -18,9 +18,9 @@
     <div class="form-container">
         <form class="auth-form">
             <label for="">Login</label>
-            <input type="text" placeholder="Write your login" name="login" class="login">
+            <input type="text" placeholder="Write your login" name="login" class="login shdw">
             <label for="">Password</label>
-            <input type="password" placeholder="Write your password" name="pass" class="pass" required >
+            <input type="password" placeholder="Write your password" name="pass" class="pass shdw" required >
             <input type="submit" value="sign in" class="sign-in">
             <div>
                 Not have an accoutn? - <a href="registration.php" style="color: blue">Sign up</a>

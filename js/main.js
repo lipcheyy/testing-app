@@ -2,16 +2,23 @@ $('.sign-in').click(function (event){
     event.preventDefault();
     login=$('.login').val();
     password=$('.pass').val();
+    console.log(password);
     $.ajax({
         url:'includes/signin.php',
         type: 'POST',
-        dataType: 'text',
+        dataType: 'json',
         data:{
             login:login,
-            password: password
+            pass: password
         },
         success (data){
-            $('.message').removeClass('hide').text(data);
+            if(data.status===true){
+                document.location.href="homepage.php"
+            }
+            else {
+                $('.message').removeClass('hide').text(data.message);
+            }
+
         }
     });
     console.log(login);

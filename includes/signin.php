@@ -15,9 +15,15 @@
             'avatar' => $user['avatar'],
             'login' => $user['login']
         ];
-        //header('Location: ../homepage.php');
-        echo "sucessful";
+        $response=[
+            "status"=>true
+        ];
+        echo json_encode($response);
     }
     else{
-        echo "notsucesfull";
+        $response=[
+            "status"=>false,
+            "message"=> "WRONG LOGIN OR PASSWORD"
+        ];
+        echo json_encode($response);
     }

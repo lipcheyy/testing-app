@@ -15,6 +15,7 @@ if(!$_SESSION['user']){
 </head>
 <body>
 <a href="includes/exit.php" style="color: #0e1321">EXIT</a>
-sui
+<img src="<?= $_SESSION['user']['avatar']?>" width="100px" height="200px" alt="">
+<h2><?=$_SESSION['user']['login']?></h2>
 </body>
 </html>

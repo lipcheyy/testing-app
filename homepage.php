@@ -2,7 +2,11 @@
 session_start();
 if(!$_SESSION['user']){
     header('Location: authorization/index.php');
-}?>
+}
+include "views/header.php";
+require_once 'includes/connect.php';
+$test_list=mysqli_query($connect,"SELECT * FROM tests")
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,8 +18,16 @@ if(!$_SESSION['user']){
     <title>Homepage</title>
 </head>
 <body>
-<a href="includes/exit.php" style="color: #0e1321">EXIT</a>
-<img src="<?= $_SESSION['user']['avatar']?>" width="100px" height="200px" alt="">
-<h2><?=$_SESSION['user']['login']?></h2>
+    <div class="container">
+        <h1>Tests list:</h1>
+        <?php while ($value=mysqli_fetch_array($test_list)){?>
+        <div class="item">
+
+                <p>test name: <?=$value['topic']?></p>
+                <p>description: <?= $value['description']?></p>
+                <p> creator: <?=$value['creator']?></p>
+        </div>
+        <?php }?>
+    </div>
 </body>
 </html>

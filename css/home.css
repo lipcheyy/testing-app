@@ -21,3 +21,54 @@ a {
     text-decoration: none;
     font-family: Montserrat;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+.item{
+    background-color: #e7e7e8;;
+    padding: 30px ;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.item:hover{
+    -webkit-box-shadow: 10px 0px 127px 43px rgba(209,209,209,1);
+    -moz-box-shadow: 10px 0px 127px 43px rgba(209,209,209,1);
+    box-shadow: 10px 0px 127px 43px rgba(209,209,209,1);
+    transition: 0.3s ease-in-out;
+}
+.btns{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+.fav{
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #85f585;
+}
+.favor{
+    padding: 10px;
+    background-color: #d33333;
+    border-radius: 10px;
+}
+.remove{
+    background-color: #d33333;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.tests-list{
+
+}

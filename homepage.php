@@ -26,6 +26,9 @@ $test_list=mysqli_query($connect,"SELECT * FROM tests")
                 <p>test name: <?=$value['topic']?></p>
                 <p>description: <?= $value['description']?></p>
                 <p> creator: <?=$value['creator']?></p>
+                <?php if ($_SESSION['user']['login']=="admin"):?>
+                <a href="add_new_question_form.php?id=<?=$value['id']?> "class='add'>add new questions</a>
+                <?php endif;?>
         </div>
         <?php }?>
     </div>

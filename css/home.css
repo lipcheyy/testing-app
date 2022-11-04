@@ -69,6 +69,11 @@ a {
     border-radius: 10px;
 
 }
+.add{
+    color: black;
+    padding: 10px;
+    background-color: #85f585;
+}
 .tests-list{
 
 }

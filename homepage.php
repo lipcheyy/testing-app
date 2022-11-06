@@ -29,6 +29,7 @@ $test_list=mysqli_query($connect,"SELECT * FROM tests")
                 <?php if ($_SESSION['user']['login']=="admin"):?>
                 <a href="add_new_question_form.php?id=<?=$value['id']?> "class='add'>add new questions</a>
                 <?php endif;?>
+                <a href="start_test.php?id=<?=$value['id']?>" class="start">start testing</a>
         </div>
         <?php }?>
     </div>

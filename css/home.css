@@ -74,6 +74,11 @@ a {
     padding: 10px;
     background-color: #85f585;
 }
+.start{
+    color: black;
+    padding: 10px;
+    background-color: #f86868;
+}
 .tests-list{
 
 }

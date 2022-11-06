@@ -2,6 +2,7 @@
 session_start();
 include "includes/connect.php";
 include 'views/header.php';
+include 'includes/start.php';
 //chckin test id, exisst test or not
 $test_id= $_GET["id"];
 /** @var TYPE_NAME $connect */
@@ -32,8 +33,11 @@ if (!empty($ans_id)){
     $ans_val=mysqli_fetch_array($answer_query);
     $_SESSION['mark']+=$ans_val['flag'];
 }
-
-
+//push into other res table
+$flag_query=mysqli_query($connect,"SELECT * FROM options WHERE id='$ans_id'");
+$flag_arr=mysqli_fetch_array($flag_query);
+$flag=$flag_arr['flag'];
+$_SESSION['results']+=$flag;
 //checking if we still have questns
 if ($cnt_of_rows>=$question_num){
     $exists=true;
@@ -41,6 +45,14 @@ if ($cnt_of_rows>=$question_num){
     $q_row=mysqli_fetch_array($quest_query);
     $q_title=$q_row['question'];
     $q_id=$q_row['id'];
+
+}
+else{
+    $rating=$_SESSION['mark'];
+    $res_query=mysqli_query($connect,"SELECT * FROM res WHERE test_id='$test_id' AND better>='$rating'");
+    $res_row=mysqli_fetch_array($res_query);
+    $res=$res_row['res'];
+
 }
 //options
 $opt_query=mysqli_query($connect, "SELECT * FROM options WHERE question_id='$q_id'");
@@ -72,19 +84,19 @@ $opt_query=mysqli_query($connect, "SELECT * FROM options WHERE question_id='$q_i
             </div>
             <?php while ($opt=mysqli_fetch_array($opt_query)){?>
             <div class="options">
-                <input type="radio" value="<?= $opt['id']?>" name="ans"><?= $opt['answear_option']?>
+                <input type="radio" value="<?= $opt['id']?>" name="ans"><?= $opt['answear_option'];?>
             </div>
             <?php }?>
 
         <div class="btns">
             <?php if($question_num==$cnt_of_rows){?>
-            <button type="submit" class="btns">get res</button>
+                <form action="includes/start.php"><button type="submit" class="btns" name="get_res">get res</button></form>
             <?php } else{?>
-            <button type="submit" class="btns">next</button>
+            <button type="submit" class="btns" name="nxt">next</button>
             <?php }?>
         </div>
         </form>
-            <?php }?>
+            <?php } else{echo 234234;}?>
         </div>
     </div>
 </body>

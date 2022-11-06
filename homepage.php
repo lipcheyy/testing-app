@@ -5,7 +5,11 @@ if(!$_SESSION['user']){
 }
 include "views/header.php";
 require_once 'includes/connect.php';
-$test_list=mysqli_query($connect,"SELECT * FROM tests")
+$test_list=mysqli_query($connect,"SELECT * FROM tests");
+if (isset($_POST['home'])){
+    unset($_SESSION['results']);
+}
+
 ?>
 <!doctype html>
 <html lang="en">

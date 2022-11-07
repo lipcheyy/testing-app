@@ -7,7 +7,6 @@ $question_summary=mysqli_query($connect,"SELECT count(*) as count FROM questions
 $q_count=mysqli_fetch_array($question_summary);
 $cnt_of_rows=$q_count['count'];
 $_SESSION['t_id']=$test_id;
-echo $_SESSION['t_id'];
 ?>
 <!doctype html>
 <html lang="en">

@@ -31,7 +31,7 @@ if (isset($_POST['home'])){
     <title>Homepage</title>
 </head>
 <body>
-    <div class="h_con" style="display: flex; justify-content:  center"><h1 style="margin: 0 auto">Tests list:</h1></div>
+    <div class="h_con" style="display: flex; justify-content:  center; margin-top: 10px"><h1 style="margin: 0 auto">Tests list:</h1></div>
     <div class="container">
 
         <?php while ($value=mysqli_fetch_array($test_list)){?>
@@ -42,8 +42,9 @@ if (isset($_POST['home'])){
                 <p> creator: <?=$value['creator']?></p>
                 <?php if ($_SESSION['user']['login']=="admin"):?>
                 <a href="add_new_question_form.php?id=<?=$value['id']?> "class='add'>add new questions</a>
+                    <a href="includes/delete.php?id=<?=$value['id']?> "class='start'>delete</a>
                 <?php endif;?>
-                <a href="start_test.php?id=<?=$value['id']?>" class="start">start testing</a>
+                <a href="start_test.php?id=<?=$value['id']?>" class="start btn">start testing</a>
         </div>
         <?php }?>
     </div>

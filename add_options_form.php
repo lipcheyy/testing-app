@@ -9,6 +9,7 @@ include 'includes/add_options.php';
 $id=$_GET['id'];
 $query=mysqli_query($connect,"SELECT * FROM questions WHERE id='$id'");
 $row=mysqli_fetch_array($query);
+$test_id=$_SESSION['tid'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,6 +31,7 @@ $row=mysqli_fetch_array($query);
         write 1(if option is right) or 0
         <input type="text" name="flag">
         <input type="submit" name="save" class="btn">
+        <a href="add_new_question_form.php?id=<?=$row['test_id']?>">back</a>
     </form>
     </div>
 </body>

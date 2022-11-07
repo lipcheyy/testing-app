@@ -22,8 +22,9 @@ if (isset($_POST['home'])){
     <title>Homepage</title>
 </head>
 <body>
+    <div class="h_con" style="display: flex; justify-content:  center"><h1 style="margin: 0 auto">Tests list:</h1></div>
     <div class="container">
-        <h1>Tests list:</h1>
+
         <?php while ($value=mysqli_fetch_array($test_list)){?>
         <div class="item">
 

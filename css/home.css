@@ -23,7 +23,7 @@ a {
 }
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     width: 600px;
     margin: 0 auto;
@@ -79,6 +79,32 @@ a {
     padding: 10px;
     background-color: #f86868;
 }
-.tests-list{
-
+.res_container:not(.home-btn){
+    width: 600px;
+    margin: 70px auto 0 auto;
+    display: flex;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    justify-content: center;
+    background-color: #e7e7e8;
+}
+.home-btn{
+    width: 600px;
+    display: flex;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f2f2fc;
+    justify-content: center;
+    margin: 0 auto;
+}
+.btn{
+    background-color: black;
+    color: white;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: Montserrat;
+    cursor: pointer;
 }

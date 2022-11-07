@@ -17,11 +17,11 @@ $questions=mysqli_query($connect,"SELECT * FROM questions WHERE test_id='$id'")
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" class="new_question">
     <label for="">write your question</label>
     <input type="hidden" value="<?=$id?>" name="id">
     <input type="text" name="question">
-    <input type="submit" name="save" value="Choose options">
+    <input type="submit" name="save" class="btn" value="Choose options">
 
 </form>
 <div class="qustions-list">

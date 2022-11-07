@@ -13,16 +13,18 @@ $id=$_GET['id'];
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/questions.css">
 </head>
 <body>
-    <form action="" method="post">
+    <div class="grey">
+    <form action="" method="post" class="add_opt">
         <input type="hidden" value="<?= $id?>" name="id">
         write your option
         <input type="text" name="option">
         write 1(if option is right) or 0
         <input type="text" name="flag">
-        <input type="submit" name="save">
+        <input type="submit" name="save" class="btn">
     </form>
-
+    </div>
 </body>
 </html>

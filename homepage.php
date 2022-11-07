@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['user']){
-    header('Location: authorization/index.php');
+    header('Location: index.php');
 }
 include "views/header.php";
 require_once 'includes/connect.php';

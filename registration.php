@@ -28,7 +28,7 @@
         <label for="">Repeat password</label>
         <input type="password" name="password_confirm" placeholder="repeat your password" class="pass-rep" autocomplete="off">
         <label for="ph">Choose your avatar</label>
-        <input type="file" id="ph" name="avatar" class="avatar">
+        <!--<input type="file" id="ph" name="avatar" class="avatar">-->
         <input type="submit"  name="sign-up" value="sign up" class="sign-up">
         <div>
            Already have an account - <a href="index.php" style="color: blue">Sign in!</a>

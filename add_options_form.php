@@ -1,9 +1,14 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header('Location: index.php');
+}
 require_once 'includes/connect.php';
 include 'views/header.php';
 include 'includes/add_options.php';
 $id=$_GET['id'];
+$query=mysqli_query($connect,"SELECT * FROM questions WHERE id='$id'");
+$row=mysqli_fetch_array($query);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,6 +22,7 @@ $id=$_GET['id'];
 </head>
 <body>
     <div class="grey">
+       <h2 style="width: 200px;margin: 0 auto;display:flex;" ><?=$row['question']?>?</h2>
     <form action="" method="post" class="add_opt">
         <input type="hidden" value="<?= $id?>" name="id">
         write your option

@@ -32,10 +32,7 @@ $('.sign-in').click(function (event){
 });
 
 
-let avatar=false;
-$('.avatar').change(function (event){
-   avatar=event.target.files[0];
-});
+
 //FOR REGISTRATION
 $('.sign-up').click(function (e) {
     e.preventDefault();
@@ -54,7 +51,7 @@ $('.sign-up').click(function (e) {
     formData.append('password_confirm', password_confirm);
     formData.append('full_name', full_name);
     formData.append('email', email);
-    formData.append('avatar', avatar);
+
 
 
     $.ajax({

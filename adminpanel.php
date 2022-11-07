@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header('Location: index.php');
+}
 require_once 'includes/connect.php';
 include "includes/add_test.php";
 include 'views/header.php'; ?>
@@ -14,6 +17,7 @@ include 'views/header.php'; ?>
     <title>Document</title>
 </head>
 <body>
+<h1 style="margin: 0 auto; width: 330px">CREATE NEW TEST</h1>
 <form action="" method="post" class="add_opt">
     <label for="photo">Choose test topic</label>
     <input type="text" name="topic" id="photo">

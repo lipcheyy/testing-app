@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header('Location: index.php');
+}
 include "includes/connect.php";
 include 'views/header.php';
 include 'results.php';

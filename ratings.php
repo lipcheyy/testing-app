@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header('Location: index.php');
+}
 require_once 'includes/connect.php';
 $cur_usr=$_SESSION['user']['login'];
 

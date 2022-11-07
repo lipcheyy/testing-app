@@ -31,7 +31,7 @@
             'id' => $user['id'],
             'full_name' => $user['full-name'],
             'email' => $user['email'],
-            'avatar' => $user['avatar'],
+            //'avatar' => $user['avatar'],
             'login' => $user['login']
         ];
         $response=[

@@ -3,6 +3,9 @@ session_start();
 require_once 'includes/connect.php';
 include "includes/add_new_question.php";
 include 'views/header.php';
+if(!$_SESSION['user']){
+    header('Location: index.php');
+}
 $id=$_GET['id'];
 $questions=mysqli_query($connect,"SELECT * FROM questions WHERE test_id='$id'")
 ?>

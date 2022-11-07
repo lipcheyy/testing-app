@@ -23,6 +23,7 @@ if (mysqli_num_rows($check_login) > 0) {
     echo json_encode($response);
     die();
 }
+//searching fields with error
 $errors = [];
 if (trim($login) == '') {
     $errors[] = 'login';
@@ -39,9 +40,7 @@ if (trim($email) === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if (trim($password_confirm) === '') {
     $errors[] = 'password_confirm';
 }
-if (!$_FILES['avatar']) {
-    $errors[] = 'avatar';
-}
+
 If (!empty($errors)) {
     $response = [
         "status" => false,
@@ -56,22 +55,8 @@ If (!empty($errors)) {
 }
 
 if ($password === $password_confirm) {
-
-    $path = 'uploads/' . time() . $_FILES['avatar']['name'];
-    if (!move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path)) {
-        $response = [
-            "status" => false,
-            "type" => 2,
-            "message" => "ERROR LOADING AVATAR",
-        ];
-        echo json_encode($response);
-    }
-
     $password = md5($password);
-
-    mysqli_query($connect, "INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name', '$login', '$email', '$password', '$path')");
-
-
+    mysqli_query($connect, "INSERT INTO `users` (`id`, `full-name`, `login`, `email`, `password`) VALUES (NULL, '$full_name', '$login', '$email', '$password')");
     $response = [
         "status" => true,
         "message" => "Регистрация прошла успешно!",

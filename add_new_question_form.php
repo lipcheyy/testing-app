@@ -6,7 +6,6 @@ include 'views/header.php';
 if(!$_SESSION['user']){
     header('Location: index.php');
 }
-
 $id=$_GET['id'];
 $questions=mysqli_query($connect,"SELECT * FROM questions WHERE test_id='$id'");
 $_SESSION['tid']+=$id;

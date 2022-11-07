@@ -6,6 +6,8 @@ require_once 'includes/connect.php';
 $question_summary=mysqli_query($connect,"SELECT count(*) as count FROM questions WHERE test_id='$test_id'");
 $q_count=mysqli_fetch_array($question_summary);
 $cnt_of_rows=$q_count['count'];
+$_SESSION['t_id']=$test_id;
+echo $_SESSION['t_id'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +23,8 @@ $cnt_of_rows=$q_count['count'];
 <?php
 //show results
 if (isset($_POST['get_res'])){ ?>
-    <?php /*if session is empty*/
+    <?php
+    /*if session is empty*/
     if ($_SESSION['results']==0){?>
         <div class="res_container">
             <h1>You answered correct on 0 questionss out of <?= $cnt_of_rows?></h1>

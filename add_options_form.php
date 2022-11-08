@@ -31,7 +31,7 @@ $test_id=$_SESSION['tid'];
         write 1(if option is right) or 0
         <input type="text" name="flag">
         <input type="submit" name="save" class="btn">
-        <a href="add_new_question_form.php?id=<?=$row['test_id']?>">back</a>
+        <a href="add_new_question_form.php?id=<?=$row['test_id']?>" class="btn">back to questions</a>
     </form>
     </div>
 </body>

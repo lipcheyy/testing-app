@@ -9,7 +9,7 @@ if (!isset($_SESSION['test_id']) or $_SESSION['test_id']!=$test_id){
     $_SESSION['test_id']=$test_id;
 }
 //my question num
-$question_num=$_POST['q'];
+$question_num=$_POST['q_num'];
 if (empty($question_num)){
     $question_num=0;
 }
@@ -41,6 +41,10 @@ if (!empty($ans_id)){
     $answer_query=mysqli_query($connect,"SELECT * FROM options WHERE id='$ans_id'");
     $ans_val=mysqli_fetch_array($answer_query);
     $_SESSION['results']+=$ans_val['flag'];
+    if (isset($_POST['void'])){
+        $_SESSION['results']+=0;
+    }
 }
+
 
 

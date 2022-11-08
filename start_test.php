@@ -24,7 +24,7 @@ include 'includes/test_proccess.php';
         <div class="content">
             <?php if($exists){?>
             <form action="start_test.php?id=<?= $test_id?>" method="post">
-                <input type="hidden" name="q" value="<?=$question_num?>">
+                <input type="hidden" name="q_num" value="<?=$question_num?>">
                 <div class="sui" style="text-align: center">
                     question <?=$question_num?>/<?=$cnt_of_rows?>
                 </div>
@@ -33,7 +33,7 @@ include 'includes/test_proccess.php';
                 </div>
                 <?php while ($opt=mysqli_fetch_array($opt_query)){?>
                 <div class="options">
-                    <input type="radio" required value="<?= $opt['id']?>" name="ans"><?= $opt['answear_option'];?>
+                    <input type="radio" value="<?= $opt['id']?>" name="ans"><?= $opt['answear_option'];?>
                 </div>
                 <?php }?>
 
@@ -42,6 +42,7 @@ include 'includes/test_proccess.php';
                         <form action="results.php"><button type="submit" class="btn" name="get_res">get res</button></form>
                     <?php } else{?>
                     <button type="submit" class="btn" name="nxt">next</button>
+                        <button type="submit" class="btn" name="void">void</button>
                     <?php }?>
                 </div>
             </form>

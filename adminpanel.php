@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
+if(!$_SESSION['user']['login']!='admin'){
     header('Location: index.php');
 }
 require_once 'includes/connect.php';
